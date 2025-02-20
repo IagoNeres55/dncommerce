@@ -2,9 +2,8 @@
   "name": "dncommerce",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
+    "dev": "nodemon --exec ts-node src/shared/infra/http/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
     "migration:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/shared/infra/typeorm/data-source.ts",
@@ -16,12 +15,13 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "pg": "^8.13.3",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
-    "@types/node": "^22.13.1",
+    "@types/node": "^22.13.4",
     "@typescript-eslint/eslint-plugin": "^8.24.0",
     "@typescript-eslint/parser": "^8.24.0",
     "cross-env": "^7.0.3",
@@ -33,6 +33,7 @@
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.19.3",
     "typescript": "^5.7.3"
   }
 }
