@@ -2,6 +2,10 @@ import { MigrationInterface, QueryRunner, Table } from 'typeorm'
 
 export class CriaUsuario1739842179282 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(
+      `CREATE TYPE "usuarios_perfil_enum" AS ENUM ('admin', 'user', 'moderador');`
+    );
+
     await queryRunner.createTable(
       new Table({
         name: 'usuarios',
@@ -27,6 +31,13 @@ export class CriaUsuario1739842179282 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'perfil',
+            type: 'enum',
+            enumName: 'usuarios_perfil_enum',
+            default: "'user'::usuarios_perfil_enum",
+            isNullable: false,
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
@@ -43,5 +54,6 @@ export class CriaUsuario1739842179282 implements MigrationInterface {
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable('usuarios')
+    await queryRunner.query(`DROP TYPE "usuarios_perfil_enum";`)
   }
 }
