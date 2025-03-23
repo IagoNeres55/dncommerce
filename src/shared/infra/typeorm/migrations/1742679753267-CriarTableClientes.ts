@@ -16,15 +16,6 @@ export class CriarTableClientes1742679753267 implements MigrationInterface {
               generationStrategy: 'increment'
             },
             {
-              name: 'name',
-              type: 'varchar'
-            },
-            {
-              name: 'email',
-              type: 'varchar',
-              isUnique: true
-            },
-            {
               name: 'telefone',
               type: 'varchar'
             },
@@ -44,7 +35,7 @@ export class CriarTableClientes1742679753267 implements MigrationInterface {
             {
               name: 'updated_at',
               type: 'timestamp',
-              default: 'now()',
+              default: 'now()'
             },
 
           ],

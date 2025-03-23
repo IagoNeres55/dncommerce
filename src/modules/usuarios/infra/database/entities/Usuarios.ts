@@ -5,7 +5,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm'
-import { IUsuarios } from '../domain/models/IUsuarios'
+import { IUsuarios } from '../../../domain/models/IUsuarios'
 
 export enum Perfil {
   ADMIN = 'admin',
