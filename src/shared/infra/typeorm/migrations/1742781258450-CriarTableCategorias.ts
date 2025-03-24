@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm'
 
-export class CriarTablePedidoStatus1742773259694 implements MigrationInterface {
+export class CriarTableCategorias1742781258450 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'status_pedido',
+        name: 'categoria',
         columns: [
           {
             name: 'id',
@@ -14,24 +14,19 @@ export class CriarTablePedidoStatus1742773259694 implements MigrationInterface {
             generationStrategy: 'increment',
           },
           {
-            name: 'status',
+            name: 'nome',
             type: 'varchar',
-            isUnique: true,
+          },
+          {
+            name: 'descricao',
+            type: 'varchar',
           },
         ],
       }),
     )
-
-    await queryRunner.query(`
-          INSERT INTO status_pedido (status) VALUES
-          ('Iniciado'),
-          ('Em separacão'),
-          ('Aguardando Pagamento'),
-          ('Finalizado')
-        `)
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('status_pedido')
+    await queryRunner.dropTable('categoria')
   }
 }
