@@ -6,6 +6,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm'
 import { IUsuarios } from '../../../domain/models/IUsuarios'
+import { Exclude } from 'class-transformer'
 
 export enum Perfil {
   ADMIN = 'admin',
@@ -24,6 +25,7 @@ export class Usuarios implements IUsuarios {
   @Column({ type: 'text' })
   email: string
 
+  @Exclude()
   @Column({ type: 'text' })
   password: string
 

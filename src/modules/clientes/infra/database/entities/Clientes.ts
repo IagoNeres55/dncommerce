@@ -1,8 +1,11 @@
 import { IClientes } from 'modules/clientes/domain/models/IClientes'
+import { Usuarios } from 'modules/usuarios/infra/database/entities/Usuarios'
 import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm'
@@ -18,8 +21,9 @@ export class Clientes implements IClientes {
   @Column({ type: 'text' })
   endereco: string
 
-  @Column({ type: 'number' })
-  usuario_id: number
+  @OneToOne(() => Usuarios)
+  @JoinColumn({ name: 'usuario_id' })
+  Usuarios: Usuarios
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date
