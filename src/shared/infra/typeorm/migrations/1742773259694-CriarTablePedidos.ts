@@ -39,6 +39,16 @@ export class CriarTablePedidos1742773259694 implements MigrationInterface {
             scale: 2,
             default: 0,
           },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       }),
     )

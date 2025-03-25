@@ -37,6 +37,16 @@ export class CriarTableProdutos1742782534131 implements MigrationInterface {
             name: 'categoria',
             type: 'integer',
           },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       }),
     )
