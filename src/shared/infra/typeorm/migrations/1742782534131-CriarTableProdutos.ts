@@ -30,10 +30,6 @@ export class CriarTableProdutos1742782534131 implements MigrationInterface {
             default: 0,
           },
           {
-            name: 'quantidade_estoque',
-            type: 'integer',
-          },
-          {
             name: 'categoria',
             type: 'integer',
           },
