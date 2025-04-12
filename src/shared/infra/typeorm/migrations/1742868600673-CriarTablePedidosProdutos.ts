@@ -14,6 +14,13 @@ export class CriarTablePedidosProdutos1742868600673
         name: 'pedido_produtos',
         columns: [
           {
+            name: 'id',
+            type: 'integer',
+            isPrimary: true,
+            isGenerated: true,
+            generationStrategy: 'increment',
+          },
+          {
             name: 'pedido_id',
             type: 'integer',
             isNullable: false,
