@@ -36,10 +36,10 @@ export class Vendas implements IVendas {
   @Column({ type: 'date' })
   data_venda: Date
 
-  @Column({ type: 'enum', enum: MetodoPagamento })
+  @Column({ type: 'enum', enum: MetodoPagamento})
   metodo_pagamento: MetodoPagamento
 
-  @Column({ type: 'enum', enum: StatusPagamento })
+  @Column({ type: 'enum', enum: StatusPagamento, default: StatusPagamento.PENDENTE })
   status_pagamento: StatusPagamento
 
   @CreateDateColumn({ type: 'timestamp' })

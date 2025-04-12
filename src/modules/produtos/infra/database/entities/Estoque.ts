@@ -4,7 +4,6 @@ import {
   CreateDateColumn,
   JoinColumn,
   OneToOne,
-  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm'
 import { Produtos } from './Produtos'
