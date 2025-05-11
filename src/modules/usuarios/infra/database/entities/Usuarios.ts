@@ -25,8 +25,8 @@ export class Usuarios implements IUsuarios {
   @Column({ type: 'text' })
   email: string
 
-  @Exclude()
   @Column({ type: 'text' })
+  @Exclude()
   password: string
 
   @Column({ type: 'enum', enum: Perfil, default: Perfil.USER })
