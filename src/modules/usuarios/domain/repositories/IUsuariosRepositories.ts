@@ -1,5 +1,5 @@
-import { ICriarUsuario } from '../models/ICriarUsuario'
-import { IUsuarios } from '../models/IUsuarios'
+import { ICriarUsuario } from "../models/ICriarUsuario"
+import { IUsuarios } from "../models/IUsuarios"
 
 export default interface IUsuariosRepositories {
   criar(user: ICriarUsuario): Promise<IUsuarios>

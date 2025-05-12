@@ -1,6 +1,6 @@
-import { IProdutos } from "modules/produtos/domain/models/IProdutos"
 import { Column, CreateDateColumn, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
 import { Categoria } from "./Categoria"
+import { IProdutos } from "@modules/produtos/domain/models/IProdutos"
 
 export class Produtos implements IProdutos {
   @PrimaryGeneratedColumn()

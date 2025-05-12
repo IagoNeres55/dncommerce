@@ -1,4 +1,3 @@
-import { IPedidos_Produtos } from 'modules/pedidos/domain/models/IPedidos_Produtos'
 import { Pedidos } from './Pedidos'
 import {
   Column,
@@ -9,7 +8,9 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm'
-import { Produtos } from 'modules/produtos/infra/database/entities/Produtos'
+import { Produtos } from '@modules/produtos/infra/database/entities/Produtos'
+import { IPedidos_Produtos } from '@modules/pedidos/domain/models/IPedidos_Produtos'
+// import { IPedidos_Produtos } from '../../../../pedidos/domain/models/IPedidos_Produtos'
 
 export class Pedidos_Produtos implements IPedidos_Produtos {
   @PrimaryGeneratedColumn()

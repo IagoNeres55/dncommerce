@@ -1,5 +1,5 @@
-import { IClientes } from 'modules/clientes/domain/models/IClientes'
-import { Usuarios } from 'modules/usuarios/infra/database/entities/Usuarios'
+import { IClientes } from '@modules/clientes/domain/models/IClientes'
+import { Usuarios } from '@modules/usuarios/infra/database/entities/Usuarios'
 import {
   Column,
   CreateDateColumn,

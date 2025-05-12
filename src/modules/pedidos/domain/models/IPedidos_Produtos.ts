@@ -1,4 +1,4 @@
-import { IProdutos } from "modules/produtos/domain/models/IProdutos"
+import { IProdutos } from "@modules/produtos/domain/models/IProdutos"
 import { IPedidos } from "./IPedidos"
 
 export type IPedidos_Produtos = {

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/shared/infra/http/server.ts",
+    "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/shared/infra/http/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
     "migration:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/shared/infra/typeorm/data-source.ts",
@@ -14,11 +14,14 @@
   "description": "",
   "dependencies": {
     "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.18",
     "bcrypt": "^5.1.1",
     "celebrate": "^15.0.3",
     "class-transformer": "^0.5.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
     "pg": "^8.13.3",
     "reflect-metadata": "^0.2.2",
     "tsyringe": "^4.10.0",

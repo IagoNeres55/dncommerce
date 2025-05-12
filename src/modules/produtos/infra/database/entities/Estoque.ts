@@ -1,4 +1,3 @@
-import { IEstoque } from 'modules/produtos/domain/models/IEstoque'
 import {
   Column,
   CreateDateColumn,
@@ -7,6 +6,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm'
 import { Produtos } from './Produtos'
+import { IEstoque } from '@modules/produtos/domain/models/IEstoque'
 
 export class Estoque implements IEstoque {
   @OneToOne(() => Produtos)

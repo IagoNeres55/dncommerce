@@ -1,4 +1,4 @@
-import { Produtos } from 'modules/produtos/infra/database/entities/Produtos'
+import { Produtos } from "@modules/produtos/infra/database/entities/Produtos"
 
 export type IEstoque = {
   produto_id: Produtos

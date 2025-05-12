@@ -1,5 +1,5 @@
-import { Pedidos_Produtos } from 'modules/pedidos/infra/database/entities/Pedidos_Produtos'
-import { IVendas } from 'modules/vendas/domain/models/IVendas'
+import { Pedidos_Produtos } from '@modules/pedidos/infra/database/entities/Pedidos_Produtos'
+import { IVendas } from '@modules/vendas/domain/models/IVendas'
 import {
   Column,
   CreateDateColumn,
@@ -36,10 +36,14 @@ export class Vendas implements IVendas {
   @Column({ type: 'date' })
   data_venda: Date
 
-  @Column({ type: 'enum', enum: MetodoPagamento})
+  @Column({ type: 'enum', enum: MetodoPagamento })
   metodo_pagamento: MetodoPagamento
 
-  @Column({ type: 'enum', enum: StatusPagamento, default: StatusPagamento.PENDENTE })
+  @Column({
+    type: 'enum',
+    enum: StatusPagamento,
+    default: StatusPagamento.PENDENTE,
+  })
   status_pagamento: StatusPagamento
 
   @CreateDateColumn({ type: 'timestamp' })

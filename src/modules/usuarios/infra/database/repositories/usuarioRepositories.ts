@@ -1,7 +1,7 @@
-import IUsuariosRepositories from 'modules/usuarios/domain/repositories/IUsuariosRepositories'
 import { Repository } from 'typeorm'
 import { Usuarios } from '../entities/Usuarios'
-import { AppDataSource } from 'shared/infra/typeorm/data-source'
+import IUsuariosRepositories from '@modules/usuarios/domain/repositories/IUsuariosRepositories'
+import { AppDataSource } from '@shared/infra/typeorm/data-source'
 
 export class UsuarioRepositories implements IUsuariosRepositories {
   private ormRepository: Repository<Usuarios>
