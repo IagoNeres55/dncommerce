@@ -6,7 +6,7 @@ const UsuariosRoutes = Router()
 
 const userController = new UsuarioControllers()
 
-UsuariosRoutes.post('/teste', criarUsuarioSchema, userController.create)
+UsuariosRoutes.post('/criar', criarUsuarioSchema, userController.create)
 
 
 export default UsuariosRoutes

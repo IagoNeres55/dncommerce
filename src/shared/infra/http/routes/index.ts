@@ -3,6 +3,6 @@ import { Router } from 'express'
 
 const routes = Router()
 
-routes.use('/criar-usuario', UsuariosRoutes)
+routes.use('/usuario', UsuariosRoutes)
 
 export default routes

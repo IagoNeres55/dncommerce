@@ -18,8 +18,6 @@ export default class UsuarioControllers {
       password,
     })
 
-    console.log(usuario)
-
     response.json(usuario)
     return
   }
