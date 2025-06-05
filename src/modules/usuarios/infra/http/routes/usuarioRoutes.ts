@@ -8,5 +8,8 @@ const userController = new UsuarioControllers()
 
 UsuariosRoutes.post('/criar', criarUsuarioSchema, userController.create)
 
+UsuariosRoutes.get('/', userController.findAll)
+
+
 
 export default UsuariosRoutes

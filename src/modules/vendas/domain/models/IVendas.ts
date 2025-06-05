@@ -1,4 +1,4 @@
-import { Pedidos_Produtos } from "modules/pedidos/infra/database/entities/Pedidos_Produtos"
+import { Pedidos_Produtos } from "@modules/pedidos/infra/database/entities/Pedidos_Produtos"
 
 export type IVendas = {
   id: number

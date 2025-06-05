@@ -1,3 +1,4 @@
+import BuscarUsuarioService from '@modules/usuarios/services/BuscarUsuarioService'
 import CriarUsuarioService from '@modules/usuarios/services/CriarUsuarioService'
 import { Request, Response } from 'express'
 import { container } from 'tsyringe'
@@ -19,6 +20,15 @@ export default class UsuarioControllers {
     })
 
     response.json(usuario)
+    return
+  }
+
+  public async findAll(_request: Request, response: Response): Promise<void> {
+    const usuario = container.resolve(BuscarUsuarioService)
+
+    const usuarios = await usuario.execute()
+
+    response.json(usuarios)
     return
   }
 }

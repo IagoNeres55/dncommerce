@@ -18,10 +18,18 @@ export class UsuarioRepositories implements IUsuariosRepositories {
   public async salvar(user: Usuarios): Promise<Usuarios> {
     return this.ormRepository.save(user)
   }
+
+  public async buscarTodos(): Promise<Usuarios[]> {
+    const usuario = await this.ormRepository.find()
+    return usuario
+  }
+
   public async buscaPorId(id: number): Promise<Usuarios | null> {
     const usuario = await this.ormRepository.findOneBy({ id })
     return usuario
   }
+
+
 
   async buscarPorEmail(email: string): Promise<Usuarios | null> {
     const user = await this.ormRepository.findOneBy({ email })
