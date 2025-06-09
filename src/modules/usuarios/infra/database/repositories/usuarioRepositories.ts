@@ -24,15 +24,15 @@ export class UsuarioRepositories implements IUsuariosRepositories {
     return usuario
   }
 
-  public async buscaPorId(id: number): Promise<Usuarios | null> {
+  async buscarPorEmail(email: string): Promise<Usuarios | null> {
+    const usuario = await this.ormRepository.findOneBy({ email })
+    return usuario
+  }
+
+  async buscarPorId(id: number): Promise<Usuarios | null> {
     const usuario = await this.ormRepository.findOneBy({ id })
     return usuario
   }
 
 
-
-  async buscarPorEmail(email: string): Promise<Usuarios | null> {
-    const user = await this.ormRepository.findOneBy({ email })
-    return user
-  }
 }

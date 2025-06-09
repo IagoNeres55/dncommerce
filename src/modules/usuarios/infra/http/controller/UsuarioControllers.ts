@@ -1,3 +1,5 @@
+import { Perfil } from './../../database/entities/Usuarios'
+import AtualizarPermissaoUsuarioService from '@modules/usuarios/services/AtualizarPermissaoUsuarioService'
 import BuscarUsuarioService from '@modules/usuarios/services/BuscarUsuarioService'
 import CriarUsuarioService from '@modules/usuarios/services/CriarUsuarioService'
 import { Request, Response } from 'express'
@@ -30,5 +32,21 @@ export default class UsuarioControllers {
 
     response.json(usuarios)
     return
+  }
+
+  public async updatePermission(
+    request: Request,
+    response: Response,
+  ): Promise<void> {
+    const { idUsuario, perfil } = request.body
+
+    const usuario = container.resolve(AtualizarPermissaoUsuarioService)
+
+    const updateUsuario = await usuario.execute(idUsuario, perfil)
+
+    response.json({
+      messagem: 'Usuario atualizado com sucesso',
+      ...updateUsuario,
+    })
   }
 }

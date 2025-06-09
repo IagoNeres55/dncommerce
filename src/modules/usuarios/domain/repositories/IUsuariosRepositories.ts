@@ -5,6 +5,7 @@ export default interface IUsuariosRepositories {
   criar(user: ICriarUsuario): Promise<IUsuarios>
   salvar(user: IUsuarios): Promise<IUsuarios>
   buscarTodos(): Promise<IUsuarios[]>
-  buscaPorId(id: number): Promise<IUsuarios | null>
   buscarPorEmail(email: string): Promise<IUsuarios | null>
+  buscarPorId(id: number): Promise<IUsuarios | null>
+
 }
