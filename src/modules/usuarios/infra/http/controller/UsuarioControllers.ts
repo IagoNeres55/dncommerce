@@ -1,7 +1,7 @@
-import { Perfil } from './../../database/entities/Usuarios'
 import AtualizarPermissaoUsuarioService from '@modules/usuarios/services/AtualizarPermissaoUsuarioService'
 import BuscarUsuarioService from '@modules/usuarios/services/BuscarUsuarioService'
 import CriarUsuarioService from '@modules/usuarios/services/CriarUsuarioService'
+import SessaoUsuarioService from '@modules/usuarios/services/SessaoUsuarioService'
 import { Request, Response } from 'express'
 import { container } from 'tsyringe'
 
@@ -48,5 +48,12 @@ export default class UsuarioControllers {
       messagem: 'Usuario atualizado com sucesso',
       ...updateUsuario,
     })
+  }
+
+  public async login(request: Request, response: Response): Promise<void> {
+    const { email, password } = request.body
+    const resolve = container.resolve(SessaoUsuarioService)
+
+    response.json(await resolve.execute({ email, password }))
   }
 }
