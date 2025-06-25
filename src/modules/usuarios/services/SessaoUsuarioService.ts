@@ -28,7 +28,7 @@ export default class SessaoUsuarioService {
       throw new AppError('E-mail ou senha incorreto', 400)
     }
 
-    const token = jwt.sign({}, JWT_SECRET, {
+    const token = jwt.sign({ perfil: user.perfil }, JWT_SECRET, {
       subject: String(user.id),
       expiresIn: '24h',
     })

@@ -25,7 +25,9 @@ export default class UsuarioControllers {
     return
   }
 
-  public async findAll(_request: Request, response: Response): Promise<void> {
+  public async findAll(request: Request, response: Response): Promise<void> {
+    console.log(request.user.perfil)
+
     const usuario = container.resolve(BuscarUsuarioService)
 
     const usuarios = await usuario.execute()

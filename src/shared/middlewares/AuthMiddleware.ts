@@ -1,4 +1,4 @@
-import jwt, { Secret } from 'jsonwebtoken'
+import { Secret, verify } from 'jsonwebtoken'
 import AppError from '@shared/erros/AppError'
 import { NextFunction, Request, Response } from 'express'
 import 'dotenv/config'
@@ -7,6 +7,7 @@ interface ITokenPayload {
   iat: number
   exp: number
   sub: string
+  perfil: string
 }
 
 const JWT_SECRET = process.env.SECRET_KEY_JWT as Secret
@@ -26,14 +27,14 @@ export default class AuthMiddleware {
     const [, token] = authHeader.split(' ') as string[]
 
     try {
-      const decodedToken = jwt.verify(token, JWT_SECRET as string)
+      const decodedToken = verify(token, JWT_SECRET as string)
 
-      const { sub } = decodedToken as ITokenPayload
+      const { sub, perfil } = decodedToken as ITokenPayload
 
       request.user = {
         id: sub,
+        perfil: perfil,
       }
-
       return next()
     } catch (error) {
       if (error instanceof Error) {

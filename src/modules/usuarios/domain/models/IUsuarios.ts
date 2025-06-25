@@ -8,7 +8,6 @@ export type IUsuarios = {
   updated_at: Date
 }
 
-
 export type IRetornoUsuarios = {
   id: number
   name: string
@@ -17,4 +16,3 @@ export type IRetornoUsuarios = {
   created_at: Date
   updated_at: Date
 }
-

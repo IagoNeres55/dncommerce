@@ -8,7 +8,6 @@ import { AppDataSource } from '../typeorm/data-source'
 import routes from './routes'
 // import cors from 'cors'
 
-
 import '../../container'
 import TratamentoDeErroGlobal from '@shared/middlewares/TratamentoDeErroGlobal'
 import { errors } from 'celebrate'
@@ -20,7 +19,6 @@ AppDataSource.initialize()
     app.use(cors())
     app.use(express.json())
     // app.use(rateLimiter)
-
 
     app.use(routes)
     // errors do celebrate - intercepta os erros caso seja de schema
