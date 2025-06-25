@@ -23,6 +23,8 @@ UsuariosRoutes.get(
 UsuariosRoutes.put(
   '/permissoes',
   permissoesSchema,
+  AuthMiddleware.execute,
+  checkRoles(Perfil.ADMIN, Perfil.MODERADOR),
   userController.updatePermission,
 )
 
