@@ -1,8 +1,6 @@
 import { inject, injectable } from 'tsyringe'
-import { IRetornoUsuarios, IUsuarios } from '../domain/models/IUsuarios'
 import IUsuariosRepositories from '../domain/repositories/IUsuariosRepositories'
 import bcrypt from 'bcrypt'
-import { instanceToInstance } from 'class-transformer'
 import { ILoginUsuario } from '../domain/models/ICriarUsuario'
 import AppError from '@shared/erros/AppError'
 import { Secret } from 'jsonwebtoken'
@@ -37,7 +35,7 @@ export default class SessaoUsuarioService {
 
     return {
       access_token: 'Bearer',
-      token
+      token,
     }
   }
 }

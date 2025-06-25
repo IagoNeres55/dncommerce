@@ -27,6 +27,6 @@ export default class CriarUsuarioService {
       password: hashedPassword,
     })
 
-     return instanceToInstance(usuario)
+    return instanceToInstance(usuario)
   }
 }

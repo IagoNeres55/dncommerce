@@ -12,6 +12,7 @@ export default [
       parser: tsParser,
       globals: {
         console: 'readonly',
+        process: 'readonly',
       },
     },
     plugins: {
@@ -21,6 +22,14 @@ export default [
     rules: {
       ...tseslint.configs.recommended.rules,
       'prettier/prettier': 'error',
+
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
     },
   },
   prettier,

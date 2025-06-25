@@ -20,6 +20,7 @@
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
     "noImplicitAny": true,
-    "typeRoots": ["node_modules/@types", "src/@types"]
+    // "typeRoots": ["node_modules/@types", "src/@types"]
+    "typeRoots": ["./node_modules/@types", "./src/@types"]
   }
 }
