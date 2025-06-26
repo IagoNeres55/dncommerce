@@ -7,5 +7,4 @@ export default interface IUsuariosRepositories {
   buscarTodos(): Promise<IUsuarios[]>
   buscarPorEmail(email: string): Promise<IUsuarios | null>
   buscarPorId(id: number): Promise<IUsuarios | null>
-
 }

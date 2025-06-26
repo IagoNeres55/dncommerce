@@ -1,4 +1,4 @@
-import { Usuarios } from "@modules/usuarios/infra/database/entities/Usuarios"
+import { Usuarios } from '@modules/usuarios/infra/database/entities/Usuarios'
 
 export type IClientes = {
   id: number

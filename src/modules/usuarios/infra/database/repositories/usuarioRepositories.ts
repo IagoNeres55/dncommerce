@@ -33,6 +33,4 @@ export class UsuarioRepositories implements IUsuariosRepositories {
     const usuario = await this.ormRepository.findOneBy({ id })
     return usuario
   }
-
-
 }
