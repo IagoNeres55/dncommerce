@@ -13,8 +13,6 @@ export class ClienteRepositories implements IClienteRepositories {
 
   public async criarCliente(cliente: IPostCliente): Promise<Clientes> {
     const criarCliente = this.ormRepository.create(cliente)
-    console.log('Criando cliente:', criarCliente)
-
     await this.ormRepository.save(criarCliente)
     return criarCliente
   }
