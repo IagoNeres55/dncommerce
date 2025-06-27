@@ -1,8 +1,10 @@
 import { Router } from 'express'
 import ClienteController from '../controller/ClienteController'
 
-const clienteRoute = Router()
+const ClienteRoute = Router()
 
 const clienteController = new ClienteController()
 
-clienteRoute.post('/criar', clienteController.create)
+ClienteRoute.post('/teste', clienteController.create)
+
+export default ClienteRoute

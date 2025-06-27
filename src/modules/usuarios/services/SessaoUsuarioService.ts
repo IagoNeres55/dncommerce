@@ -6,6 +6,7 @@ import AppError from '@shared/erros/AppError'
 import { Secret } from 'jsonwebtoken'
 import jwt from 'jsonwebtoken'
 import { ISessionResponse } from '../domain/models/ISessionResponse'
+import { instanceToInstance } from 'class-transformer'
 
 const JWT_SECRET = process.env.SECRET_KEY_JWT as Secret
 
@@ -34,6 +35,7 @@ export default class SessaoUsuarioService {
     })
 
     return {
+      user: instanceToInstance(user),
       access_token: 'Bearer',
       token,
     }
