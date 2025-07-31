@@ -3,5 +3,7 @@ import { IPostCliente } from '../models/ICriarCliente'
 
 export default interface IClienteRepositories {
   criarCliente(cliente: IPostCliente): Promise<IClientes>
+  listarClientes(): Promise<IClientes[]>
+
   salvar(cliente: IClientes): Promise<IClientes>
 }

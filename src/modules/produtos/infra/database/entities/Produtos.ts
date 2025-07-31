@@ -1,7 +1,16 @@
-import { Column, CreateDateColumn, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
-import { Categoria } from "./Categoria"
-import { IProdutos } from "@modules/produtos/domain/models/IProdutos"
+import {
+  Entity,
+  Column,
+  CreateDateColumn,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm'
+import { Categoria } from './Categoria'
+import { IProdutos } from '@modules/produtos/domain/models/IProdutos'
 
+@Entity('produtos')
 export class Produtos implements IProdutos {
   @PrimaryGeneratedColumn()
   id: number
@@ -24,6 +33,4 @@ export class Produtos implements IProdutos {
 
   @UpdateDateColumn({ type: 'timestamp' })
   updated_at: Date
-
 }
-

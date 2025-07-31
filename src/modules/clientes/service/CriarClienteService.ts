@@ -28,4 +28,8 @@ export default class CriarClienteService {
     })
     return instanceToInstance(cliente)
   }
+  async listar(): Promise<IClientes[]> {
+    const clientes = await this.clienteRepositories.listarClientes()
+    return instanceToInstance(clientes)
+  }
 }

@@ -5,6 +5,8 @@ const ClienteRoute = Router()
 
 const clienteController = new ClienteController()
 
-ClienteRoute.post('/teste', clienteController.create)
+ClienteRoute.post('/', clienteController.create)
+
+ClienteRoute.get('/', clienteController.index)
 
 export default ClienteRoute

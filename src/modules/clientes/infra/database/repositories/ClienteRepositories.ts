@@ -20,4 +20,9 @@ export class ClienteRepositories implements IClienteRepositories {
   public async salvar(cliente: Clientes): Promise<Clientes> {
     return this.ormRepository.save(cliente)
   }
+
+  public async listarClientes(): Promise<Clientes[]> {
+    const clientes = await this.ormRepository.find()
+    return clientes
+  }
 }

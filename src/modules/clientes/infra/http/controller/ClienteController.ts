@@ -10,4 +10,13 @@ export default class ClienteController {
     response.json(cliente)
     return
   }
+
+  public async index(request: Request, response: Response): Promise<void> {
+    const data = request.body
+    const criarClienteService = container.resolve(CriarClienteService)
+    const cliente = await criarClienteService.execute(data)
+
+    response.json(cliente)
+    return
+  }
 }
