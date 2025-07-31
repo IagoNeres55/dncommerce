@@ -1,5 +1,5 @@
-import { ICategoria } from "@modules/produtos/domain/models/ICategoria"
-import { Column, PrimaryGeneratedColumn } from "typeorm"
+import { ICategoria } from '@modules/produtos/domain/models/ICategoria'
+import { Column, PrimaryGeneratedColumn } from 'typeorm'
 
 export class Categoria implements ICategoria {
   @PrimaryGeneratedColumn()
