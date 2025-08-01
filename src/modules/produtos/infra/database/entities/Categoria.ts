@@ -1,6 +1,8 @@
 import { ICategoria } from '@modules/produtos/domain/models/ICategoria'
-import { Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 
+
+@Entity('categoria')
 export class Categoria implements ICategoria {
   @PrimaryGeneratedColumn()
   id: number
