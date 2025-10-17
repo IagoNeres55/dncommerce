@@ -9,10 +9,7 @@ import {
 } from 'typeorm'
 import { IProdutos } from '@modules/produtos/domain/models/IProdutos'
 import { Estoque } from './Estoque'
-<<<<<<< HEAD
 import { Categoria } from './Categoria'
-=======
->>>>>>> 47f075e64020eee6ea56bc58dbdd2711ec46b555
 
 @Entity('produtos')
 export class Produtos implements IProdutos {

@@ -12,6 +12,4 @@ ProdutosRoute.delete('/:id', produtosController.delete)
 
 // criar categorias produtos
 
-
-
 export default ProdutosRoute

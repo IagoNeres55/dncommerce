@@ -5,6 +5,8 @@ import IClienteRepositories from '@modules/clientes/domain/repositories/ICliente
 import { ClienteRepositories } from '@modules/clientes/infra/database/repositories/ClienteRepositories'
 import IProdutosRepositories from '@modules/produtos/domain/repositories/IProdutosRepositories'
 import ProdutosRepositories from '@modules/produtos/infra/database/repositories/ProdutosRepositories'
+import VendasRepositories from '@modules/vendas/infra/database/repositories/vendasRepositories'
+import IVendasRepositories from '@modules/vendas/domain/repositories/IVendasRepositories'
 
 container.registerSingleton<IUsuariosRepositories>(
   'UsuariosRepositories',
@@ -19,4 +21,9 @@ container.registerSingleton<IClienteRepositories>(
 container.registerSingleton<IProdutosRepositories>(
   'ProdutosRepositories',
   ProdutosRepositories,
+)
+
+container.registerSingleton<IVendasRepositories>(
+  'VendasRepositories',
+  VendasRepositories,
 )

@@ -10,7 +10,6 @@ export default class ProdutosController {
     const data = request.body
     const criarProdutoService = container.resolve(CriarProdutoService)
     const produto = await criarProdutoService.execute(data)
-
     response.json(produto)
     return
   }
@@ -38,9 +37,7 @@ export default class ProdutosController {
     const deletarProdutoService = container.resolve(DeletarProdutoService)
     await deletarProdutoService.execute(Number(id))
 
-    response.status(204).send()
+    response.status(204).send({ message: 'Produto deletado com sucesso' })
     return
   }
-
-
 }

@@ -10,3 +10,5 @@ export type IVendas = {
   created_at: Date
   updated_at: Date
 }
+
+
