@@ -1,7 +1,14 @@
-import { Column, CreateDateColumn, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
-import { Status } from "./Status"
-import { IPedidos } from "@modules/pedidos/domain/models/IPedidos"
-import { Clientes } from "@modules/clientes/infra/database/entities/Clientes"
+import {
+  Column,
+  CreateDateColumn,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm'
+import { Status } from './Status'
+import { IPedidos } from '@modules/pedidos/domain/models/IPedidos'
+import { Clientes } from '@modules/clientes/infra/database/entities/Clientes'
 
 export class Pedidos implements IPedidos {
   @PrimaryGeneratedColumn()
