@@ -7,4 +7,5 @@ export default interface IVendasRepositories {
   findAll(): Promise<Vendas[]>
   update(venda: Vendas): Promise<Vendas>
   delete(id: string): Promise<void>
+  save(venda: Vendas): Promise<Vendas>
 }
