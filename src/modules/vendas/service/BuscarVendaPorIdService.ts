@@ -5,7 +5,7 @@ import IVendasRepositories from '../domain/repositories/IVendasRepositories'
 export class BuscarVendaPorIdService {
   constructor(private vendaRepositories: IVendasRepositories) {}
 
-  async execute(id: string): Promise<IVendas> {
+  async execute(id: number): Promise<IVendas> {
     const venda = await this.vendaRepositories.findById(id)
 
     if (!venda) {

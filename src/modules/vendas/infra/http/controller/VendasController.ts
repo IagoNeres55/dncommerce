@@ -1,4 +1,8 @@
+import { AtualizarStatusVendaService } from '@modules/vendas/service/AtualizarStatusVendaService'
+import { BuscarVendaPorIdService } from '@modules/vendas/service/BuscarVendaPorIdService'
+import { CancelarVendaService } from '@modules/vendas/service/CancelarVendaService'
 import { ListarVendasService } from '@modules/vendas/service/ListarVendasService'
+import { Request, Response } from 'express'
 import { container } from 'tsyringe'
 
 export default class VendasController {
@@ -8,8 +12,8 @@ export default class VendasController {
   ): Promise<void> {
     const listarVendas = container.resolve(ListarVendasService)
     const vendas = await listarVendas.execute()
-
-    return response.json(vendas)
+    response.json(vendas)
+    return
   }
 
   public async cancelar(request: Request, response: Response): Promise<void> {
@@ -28,7 +32,7 @@ export default class VendasController {
     const { id } = request.params
     const { status } = request.body
     const atualizarStatusVenda = container.resolve(AtualizarStatusVendaService)
-    const venda = await atualizarStatusVenda.execute(Number(id), status)
+    const venda = await atualizarStatusVenda.execute({ id, status })
 
     response.json(venda)
     return
@@ -39,7 +43,7 @@ export default class VendasController {
     response: Response,
   ): Promise<void> {
     const { id } = request.params
-    const buscarVenda = container.resolve(BuscarVendaService)
+    const buscarVenda = container.resolve(BuscarVendaPorIdService)
     const venda = await buscarVenda.execute(Number(id))
 
     response.json(venda)

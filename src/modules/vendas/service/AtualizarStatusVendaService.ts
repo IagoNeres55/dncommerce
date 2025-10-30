@@ -12,7 +12,7 @@ export class AtualizarStatusVendaService {
   constructor(private vendaRepositories: IVendasRepositories) {}
 
   async execute({ id, status }: IRequest): Promise<IVendas> {
-    const venda = await this.vendaRepositories.findById(id)
+    const venda = await this.vendaRepositories.findById(Number(id))
 
     if (!venda) {
       throw new AppError('Venda não encontrada.')

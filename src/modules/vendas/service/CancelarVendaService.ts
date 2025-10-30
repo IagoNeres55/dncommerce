@@ -6,8 +6,8 @@ import { StatusPagamento } from '../infra/database/entities/Vendas'
 export class CancelarVendaService {
   constructor(private vendaRepositories: IVendasRepositories) {}
 
-  async execute(id: string): Promise<IVendas> {
-    const venda = await this.vendaRepositories.findById(id)
+  async execute(id: number): Promise<IVendas> {
+    const venda = await this.vendaRepositories.findById(Number(id))
 
     if (!venda) {
       throw new AppError('Venda não encontrada.')
